@@ -1,1 +1,95 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="main.css">
+	<script src="main.js"> </script>
+	<body onload="my_function()">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true }}); </script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+</head>
+<body>
+<div style="display:none;">
+$\newcommand{\disp}{\displaystyle}$
+$\newcommand{\st}{\text{ s.t. }}$
+$\newcommand{\lcm}{\text{lcm}}$
+$\newcommand{\End}{\text{End}}$
+$\newcommand{\O}{\mathscr{O}}$
+$\newcommand{\R}{\mathbf{R}}$
+$\newcommand{\C}{\mathbf{C}}$
+$\newcommand{\I}{\mathscr{I}}$
+$\newcommand{\ideal}{\triangleleft}$
+$\newcommand{\gen}[1]{\langle{#1}\rangle}$
+</div>
+
+--------- linear algebra ---------
+
+<hr>
+
+claim. given $T\in\End V$, there exists a non zero polynomial $f$ s.t. $f(T)=0$.
+
+<hr>
+
+<proof id="1"></proof>
+<hide id="p1"> let $n=\dim V$, so $n^2=\dim\End V$. ergo $I,T,T^2,\dots,T^{n^2}\in\End V$ are linearly dependent. <qed>▨</qed></hide>
+
+<hr>
+
+exercise + definition. given $T\in\End V$. there exists a unique monic polynomial $m_T(t)$ s.t. $\forall f(t)\in F[t]$ $f(T)=0\iff m_T(t)\mid f(t)$. 
+we say $m_T(t)$ is the <blue> minimal polynomial </blue> of $T$.
+
+<hr>
+
+exercise. $\disp\sum_{j=0}^k(-1)^j{k\choose j}f(j)=0$
+for all polynomials $f$ of degree less than $k$.
+
+<!-- hint : use either Vandermonde or $x\choose k$ -->
+
+<hr>
+
+[ca] [Hilbert] $R$ Noetherian $\implies R[t]$ Notherian.
+
+<hr>
+
+<proof id="2"></proof> 
+<hide id="p2"> fix $\I\ideal R[t]$. so $\I$ is a subset of $R[t]$ closed under addition, scaling 
+from $R$, and multiplication by $t$. thus $I_d=\{r\in R\mid \exists a_dt^d+\dots+a_0\in\I
+\st r=a_d\}$ is an increasing chain of ideals of $R$. for each $d$ up to stabilization,
+fix $I_d=\gen{r_{jd}}$, and fix $f_{jd}\in \I$ of degree $d$ whose leading coefficients is 
+$r_{jd}$. ergo $\I=\gen{f_{jd}}$ is a finitely generated ideal of $R[t]$. <qed>▨</qed></hide>
+
+<hr>
+
+[an] theorem. $f\in L^1(\mathbf{R})$, $\hat{f}\equiv0\implies f\equiv0$ ae.
+
+<hr>
+
+<proof id="3"></proof>
+<hide id="p3"> [Newman] for $a\in\R$ we have $\disp\int_{-\infty}^{a}f(x)e^{-2\pi i(x-a)\xi}\text{d} x=
+\int_{\infty}^{a}f(x)e^{-2\pi i(x-a)\xi}\text{d} x$. the lhs may be extended holomorphically 
+to the upper half plane, and the rhs to the lower half plane. the whole $F_{a}(\xi):
+\C\to\C$ is continuous, and thus holomorphic. however $|F_{a}(\xi)|\le\left\Vert f\right\Vert_1$
+, so by Liouville $F_{a}$ is constant. finally, by dominated convergence 
+$0=\disp\lim_{s\to -\infty}F_a(is)=F_a(0)=\int_{-\infty}^a f$. since $a\in\R$ was arbitrary, 
+$f\equiv0$ ae. <qed>▨</qed></hide>
+
+<hr>
+
+[nt] $\lcm(1,\dots,n) \ge 2^{n-2}$
+
+<hr>
+
+<proof id="4"></proof>
+<hide id="p4"> $\int_0^1 x^n(1-x)^n\text{d}x\in(0,1/4^n)$ is a fraction with denominator $\lcm(1,\dots,2n+1)$. <qed>▨</qed></hide>
+<hr>
+
+[ag] definition. a ringed space is a topological space $X$ with a sheaf of rings $\O$.
+
+<hr>
+
+<pre>
+	this is cool
+</pre>
+
+</body>
+</html>
